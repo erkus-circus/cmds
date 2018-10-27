@@ -1,0 +1,4 @@
+{
+    "run": "web.py",
+    "files": ["web.py"]
+}

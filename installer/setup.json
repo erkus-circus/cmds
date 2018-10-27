@@ -1,10 +1,10 @@
 {
-    "command":"i",
     "files": [
         "install.py",
         "easy.py",
         "uninstall.py",
         "README.txt"
     ],
-    "run": "install.py"
+    "run": "install.py",
+    "version": "1.0"
 }
