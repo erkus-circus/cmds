@@ -1,4 +1,9 @@
 {
     "command":"i",
-    "files": ["install.py"]
+    "files": [
+        "install.py",
+        "easy.py",
+        "uninstall.py",
+        "README.txt"
+    ]
 }
