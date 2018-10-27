@@ -1,4 +1,4 @@
 {
     "command":"i",
-    "file": "install.py"
+    "files": ["install.py"]
 }
