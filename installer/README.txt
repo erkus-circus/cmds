@@ -1,1 +1,0 @@
-This KryptOs package enables a more easy install system rathger than defalting to the built-in 'install' command.
