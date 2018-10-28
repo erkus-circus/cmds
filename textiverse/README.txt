@@ -1,0 +1,1 @@
+Textiverse a a game full of text! You are taken through a story and you make choices depending on where you are.
