@@ -1,0 +1,8 @@
+{
+    "version": "1.0",
+    "run": "init.py",
+    "files": [
+        "init.py",
+        "README.txt"
+    ]
+}
