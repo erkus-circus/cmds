@@ -38,7 +38,6 @@ class Editor(object):
             self.open_file()
 
         self.loadMenu(json.loads(open(PATH + 'menus.json').read()))
-        self.set_word_wrap(None)
 
     txtArea = None
     fontsize = 11
@@ -128,12 +127,11 @@ def main():
     root = tk.Tk()
     args = [root,None]
     if len(command.split()) > 1:
-        args[1] = command[7:]
+        args[1] = command[8:]
     with open(PATH + 'menus.json') as JSON:
         tedit = Editor(*args)
         tedit.loadMenu(json.loads(JSON.read()))
 
     root.mainloop()
-
 
 main()
