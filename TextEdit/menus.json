@@ -4,11 +4,6 @@
         "type": "dropdown",
         "drop": [
             {
-                "name": "New file",
-                "type": "cmd",
-                "cmd": "cursor_down"
-            },
-            {
                 "type": "cmd",
                 "name": "save",
                 "cmd": "save_file",
