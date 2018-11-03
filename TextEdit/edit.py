@@ -125,7 +125,8 @@ class Editor(object):
 
 
 def main():
-    args = [tk.Tk(),None]
+    root = tk.Tk()
+    args = [root,None]
     if len(command.split()) > 1:
         args[1] = command[7:]
     with open(PATH + 'menus.json') as JSON:
