@@ -126,7 +126,7 @@ class Editor(object):
 
 def main():
     args = [tk.Tk(),None]
-    if len(command) > 1:
+    if len(command.split()) > 1:
         args[1] = command[7:]
     with open(PATH + 'menus.json') as JSON:
         tedit = Editor(*args)
