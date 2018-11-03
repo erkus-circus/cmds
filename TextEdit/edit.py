@@ -13,7 +13,6 @@ import sys
 import tkinter as tk
 from tkinter import filedialog
 
-import erk
 
 VERSION = '0.2.5.0'
 
@@ -25,17 +24,13 @@ class Editor(object):
         self.ALL = {
             'open_file': self.open_file,
             'save_file': self.save_file,
-            'cursor_up': self.cursor_up,
-            'cursor_left': self.cursor_left,
-            'cursor_down': self.cursor_down,
-            'cursor_right': self.cursor_right,
             'exit': sys.exit,
             'font_size_add': self.size_add,
             'font_size_sub': self.size_sub
         }
 
         self.open_file()
-        self.loadMenu(json.loads(open('menus.json').read()))
+        self.loadMenu(json.loads(open(PATH + 'menus.json').read()))
         self.set_word_wrap(None)
 
     txtArea = None
@@ -62,12 +57,8 @@ class Editor(object):
             self.root.title()
             self.txtArea = tk.Text(self.root)
             self.txtArea.insert(tk.END, self.get_text())
-            self.txtArea.bind('<KeyRelease>', self.unsaved)
             self.txtArea.pack(expand=1, fill='both')
             self.txtArea.focus_force()
-
-    def unsaved(self, evt=None):
-        self.root.title(self.title + ' *')
 
     def open_file(self, types=(('All Files', '*.*'))):
         """Open a file dialog and select a file.
@@ -122,31 +113,16 @@ class Editor(object):
 
         return menu
 
-    def cursor_up(self, evt=None):
-        self.txtArea.focus_force()
-        erk.KeyboardClass.typeLetter(erk.keyboard.Key.up)
-
-    def cursor_left(self, evt=None):
-        self.txtArea.focus_force()
-        erk.KeyboardClass.typeLetter(erk.keyboard.Key.left)
-
-    def cursor_down(self, evt=None):
-        self.txtArea.focus_force()
-        erk.KeyboardClass.typeLetter(erk.keyboard.Key.down)
-
-    def cursor_right(self, evt=None):
-        self.txtArea.focus_force()
-        erk.KeyboardClass.typeLetter(erk.keyboard.Key.right)
-
     def __str__(self):
         return self.txtArea.get('1.0', tk.END)
 
 
 def main():
-    root = tk.Tk('Test')
-    with open('menus.json') as JSON:
+    root = tk.Tk()
+    with open(PATH + 'menus.json') as JSON:
         tedit = Editor(root)
         tedit.loadMenu(json.loads(JSON.read()))
+
     root.mainloop()
 
 
