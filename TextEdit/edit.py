@@ -24,7 +24,7 @@ class Editor(object):
         self.ALL = {
             'open_file': self.open_file,
             'save_file': self.save_file,
-            'exit': sys.exit,
+            'exit': self.root.destroy,
             'font_size_add': self.size_add,
             'font_size_sub': self.size_sub
         }
@@ -124,5 +124,6 @@ def main():
         tedit.loadMenu(json.loads(JSON.read()))
 
     root.mainloop()
+
 
 main()
