@@ -31,6 +31,9 @@ class Editor(object):
 
         if path != None:
             self.path = path
+            if self.txtArea == None:
+                self.loadUI()
+            self.txtArea.insert('1.0', self.get_text())
         else:
             self.open_file()
 
