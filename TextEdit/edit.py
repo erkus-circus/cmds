@@ -12,7 +12,6 @@ import os
 import sys
 import tkinter as tk
 from tkinter import filedialog
-import threading as thr
 
 
 VERSION = '0.2.5.0'
@@ -137,5 +136,3 @@ def main():
         tedit.loadMenu(json.loads(JSON.read()))
 
     root.mainloop()
-
-thr.Thread(target=main).start()
