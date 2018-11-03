@@ -12,6 +12,7 @@ import os
 import sys
 import tkinter as tk
 from tkinter import filedialog
+import threading as thr
 
 
 VERSION = '0.2.5.0'
@@ -124,8 +125,8 @@ class Editor(object):
 
 
 def main():
-    root = tk.Tk()
 
+    root = tk.Tk()
     path = None
 
     if len(command.split()) > 1:
@@ -137,4 +138,4 @@ def main():
 
     root.mainloop()
 
-main()
+thr.Thread(target=main).start()
