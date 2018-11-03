@@ -125,11 +125,14 @@ class Editor(object):
 
 def main():
     root = tk.Tk()
-    args = [root,None]
+
+    path = None
+
     if len(command.split()) > 1:
-        args[1] = command[8:]
+        path = command[8:]
+
     with open(PATH + 'menus.json') as JSON:
-        tedit = Editor(*args)
+        tedit = Editor(root, path)
         tedit.loadMenu(json.loads(JSON.read()))
 
     root.mainloop()
