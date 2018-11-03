@@ -129,7 +129,7 @@ def main():
     path = None
 
     if len(command.split()) > 1:
-        path = command[8:]
+        path = command[9:]
 
     with open(PATH + 'menus.json') as JSON:
         tedit = Editor(root, path)
