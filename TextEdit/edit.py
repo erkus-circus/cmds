@@ -19,7 +19,7 @@ VERSION = '0.2.5.0'
 
 class Editor(object):
 
-    def __init__(self, root):
+    def __init__(self, root, path=None):
         self.root = root
         self.ALL = {
             'open_file': self.open_file,
@@ -29,7 +29,11 @@ class Editor(object):
             'font_size_sub': self.size_sub
         }
 
-        self.open_file()
+        if path != None:
+            self.path = path
+        else:
+            self.open_file()
+
         self.loadMenu(json.loads(open(PATH + 'menus.json').read()))
         self.set_word_wrap(None)
 
@@ -118,9 +122,11 @@ class Editor(object):
 
 
 def main():
-    root = tk.Tk()
+    args = (tk.Tk(),None)
+    if len(command) > 1:
+        args[1] = command[7:]
     with open(PATH + 'menus.json') as JSON:
-        tedit = Editor(root)
+        tedit = Editor(*args)
         tedit.loadMenu(json.loads(JSON.read()))
 
     root.mainloop()
