@@ -1,6 +1,6 @@
 import webbrowser as wbb
-
-if len(command.split()) < 2:
+from sys import argv
+if len(argv) < 2:
     print('Usage: web <URL>')
 else:
-    wbb.get().open_new_tab(command.split()[1])
+    wbb.get().open_new_tab(argv[1])
