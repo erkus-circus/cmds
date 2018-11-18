@@ -1,4 +1,4 @@
 {
     "run": "print.py",
-    "files": ["print.py"]
+    "files": ["print.py","icon.gif"]
 }
