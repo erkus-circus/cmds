@@ -1,0 +1,4 @@
+{
+    "run": "textEdit.py",
+    "files": ["textEdit.py", "menus.json"]
+}

@@ -1,0 +1,4 @@
+{
+    "run": "google.py",
+    "files": ["google.py"]
+}
